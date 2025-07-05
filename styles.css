@@ -1,36 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Arial', sans-serif;
   background-color: #fdfdfd;
   background-image: radial-gradient(#ddd 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-section {
-  width: 100%;
+.screen {
+  display: none;
   padding: 16px;
   box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fffaf0;
 }
 
 h1, h2, h3 {
-  font-size: 1.8em;
   color: #333;
   margin-bottom: 12px;
-}
-
-p, li, label {
-  font-size: 1.2em;
-  line-height: 1.4;
-  color: #444;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 li {
@@ -41,42 +33,19 @@ li {
   padding: 12px;
 }
 
-a.button {
-  display: block;
+button {
   width: 100%;
-  text-align: center;
   background-color: #ffd580;
+  border: 2px dashed #ffb347;
   border-radius: 20px;
   padding: 14px;
+  font-size: 1.1em;
   margin: 8px 0;
-  font-size: 1.2em;
-  text-decoration: none;
-  color: #333;
-  border: 2px dashed #ffb347;
-  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-a.button:hover {
+button:hover {
   background-color: #ffcc66;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 15px;
-  border: 2px dashed #ccc;
-  margin-top: 12px;
-}
-
-.video-placeholder {
-  background-color: #e0f7fa;
-  border: 2px dashed #4dd0e1;
-  border-radius: 15px;
-  padding: 40px;
-  text-align: center;
-  font-size: 1.3em;
-  color: #00796b;
-  margin-top: 12px;
 }
 
 input[type="text"], input[type="file"] {
@@ -86,19 +55,26 @@ input[type="text"], input[type="file"] {
   margin-bottom: 16px;
   border: 2px dashed #ffa07a;
   border-radius: 10px;
-  background-color: #fffaf0;
+  background-color: #fff;
   font-size: 1em;
-  box-sizing: border-box;
+}
+
+.video-placeholder,
+.photo-placeholder {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  background-color: #e0f7fa;
+  margin-top: 12px;
+  color: #00796b;
+  font-size: 1.2em;
 }
 
 form button {
-  width: 100%;
   background-color: #ffb6b9;
   border: 2px dashed #ff999c;
-  border-radius: 20px;
-  padding: 14px;
-  font-size: 1.2em;
-  cursor: pointer;
 }
 
 form button:hover {
@@ -106,13 +82,12 @@ form button:hover {
 }
 
 footer {
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
 }
 
 footer a {
-  color: #00796b;
   text-decoration: none;
-  font-size: 1.2em;
+  color: #00796b;
 }
 
