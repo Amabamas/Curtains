@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Patrick Hand', cursive;
+  background-color: #fdfdfd;
+  background-image: radial-gradient(#ddd 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p, li, label {
+  font-size: 1.1em;
+  line-height: 1.4;
+  color: #444;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff8f0;
+  border: 2px dashed #ffa07a;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+button {
+  background-color: #ffd580;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ffcc66;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 15px;
+  border: 2px dashed #ccc;
+  margin-top: 10px;
+}
+
+.video-placeholder {
+  background-color: #e0f7fa;
+  border: 2px dashed #4dd0e1;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #00796b;
+}
+
+input[type="text"], input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 2px dashed #ffa07a;
+  border-radius: 10px;
+  background-color: #fffaf0;
+}
+
+form button {
+  background-color: #ffb6b9;
+}
+
+form button:hover {
+  background-color: #ffa0a3;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer a {
+  color: #00796b;
+  text-decoration: none;
+  font-size: 1.1em;
+}
