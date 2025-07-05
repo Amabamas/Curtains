@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шторы</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Главная -->
+  <section id="main" class="screen">
+    <h1>Шторы</h1>
+    <ul>
+      <li>Описание</li>
+      <li>Особенности</li>
+      <li>Виды: информация + фото</li>
+    </ul>
+    <button onclick="openScreen('measurement')">Инструкция по измерению окна</button>
+    <button onclick="openScreen('categories')">Категории</button>
+  </section>
+
+  <!-- Инструкция по измерению окна -->
+  <section id="measurement" class="screen">
+    <h1>Инструкция по измерению окна</h1>
+    <p>Подробнее о том, как правильно измерить окно.</p>
+    <div class="video-placeholder">🎥 Видео-гид</div>
+    <button onclick="openScreen('main')">Назад</button>
+  </section>
+
+  <!-- Категории -->
+  <section id="categories" class="screen">
+    <h1>Категории</h1>
+    <p>Подробнее о том, как выбрать подходящие шторы для ваших нужд.</p>
+    <button onclick="openScreen('sheers')">Тюль</button>
+    <button onclick="openScreen('drapes')">Портьеры</button>
+    <button onclick="openScreen('main')">Назад</button>
+  </section>
+
+  <!-- Тюль -->
+  <section id="sheers" class="screen">
+    <h1>Тюль</h1>
+    <h2>Категории</h2>
+    <button onclick="openScreen('type')">Вид 1</button>
+    <button onclick="openScreen('type')">Вид 2</button>
+    <button onclick="openScreen('type')">Вид 3</button>
+    <button onclick="openScreen('type')">Вид 4</button>
+    <h3>Популярные варианты</h3>
+    <div class="photo-placeholder">📷 Фото 1</div>
+    <div class="photo-placeholder">📷 Фото 2</div>
+    <button onclick="openScreen('categories')">Назад</button>
+  </section>
+
+  <!-- Портьеры -->
+  <section id="drapes" class="screen">
+    <h1>Портьеры</h1>
+    <h2>Категории</h2>
+    <button onclick="openScreen('type')">Вид 1</button>
+    <button onclick="openScreen('type')">Вид 2</button>
+    <button onclick="openScreen('type')">Вид 3</button>
+    <button onclick="openScreen('type')">Вид 4</button>
+    <h3>Популярные варианты</h3>
+    <div class="photo-placeholder">📷 Фото 1</div>
+    <div class="photo-placeholder">📷 Фото 2</div>
+    <button onclick="openScreen('categories')">Назад</button>
+  </section>
+
+  <!-- Вид штор -->
+  <section id="type" class="screen">
+    <h1>Название выбранного вида</h1>
+    <div class="photo-placeholder">📷 Фото вида</div>
+    <p>Описание выбранного вида штор.</p>
+    <p>Цена: ...</p>
+    <button onclick="openScreen('product')">Перейти к товару</button>
+    <button onclick="historyBack()">Назад</button>
+  </section>
+
+  <!-- Карточка товара -->
+  <section id="product" class="screen">
+    <h1>Карточка товара</h1>
+    <div class="photo-placeholder">📷 Фото товара</div>
+    <p>Описание товара...</p>
+    <p>Дополнительная информация...</p>
+    <p>Цена: ...</p>
+    <button onclick="openScreen('order')">Заказать ➡️</button>
+    <h3>Выбрать с этим:</h3>
+    <div class="photo-placeholder">📷 Фото варианта 1</div>
+    <div class="photo-placeholder">📷 Фото варианта 2</div>
+    <div class="photo-placeholder">📷 Фото варианта 3</div>
+    <button onclick="historyBack()">Назад</button>
+  </section>
+
+  <!-- Оформление заказа -->
+  <section id="order" class="screen">
+    <h1>Оформление заказа</h1>
+    <form onsubmit="event.preventDefault(); alert('Спасибо за заказ!'); openScreen('main')">
+      <label>Размер:</label>
+      <label>Высота (вертикаль):</label>
+      <input type="text" placeholder="Введите значение">
+      <label>Ширина (горизонталь):</label>
+      <input type="text" placeholder="Введите значение">
+      <label>Загрузите фото:</label>
+      <input type="file">
+      <button type="submit">✅ Готово!</button>
+    </form>
+    <button onclick="openScreen('main')">На главную</button>
+    <footer>
+      <a href="#">Служба поддержки</a>
+    </footer>
+  </section>
+
+  <script>
+    let historyStack = ['main'];
+
+    function openScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      historyStack.push(id);
+    }
+
+    function historyBack() {
+      if (historyStack.length > 1) {
+        historyStack.pop(); // убрать текущий
+        const prev = historyStack[historyStack.length - 1];
+        openScreen(prev);
+      } else {
+        openScreen('main');
+      }
+    }
+
+    // Инициализация
+    document.addEventListener('DOMContentLoaded', () => {
+      openScreen('main');
+    });
+  </script>
+</body>
+</html>
